@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en" data-whatsapp-number="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A sample plumbing service website with service information, illustrative pricing and a quote request form."
+    >
+    <meta name="theme-color" content="#f7f7f2">
+    <title>Flow Plumbing Co. | Local Plumbing Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-drop" viewBox="0 0 24 24">
+        <path d="M12 2.5S5.5 10 5.5 14.2a6.5 6.5 0 0 0 13 0C18.5 10 12 2.5 12 2.5Z" />
+        <path d="M9 15a3 3 0 0 0 3 3" />
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a15 15 0 0 1-7-7l3-2-2-5Z" />
+      </symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24">
+        <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M7 17 17 7M7 7h10v10" />
+      </symbol>
+      <symbol id="icon-wrench" viewBox="0 0 24 24">
+        <path d="M14.5 6.5a5 5 0 0 0-6.4 6.4L3 18l3 3 5.1-5.1a5 5 0 0 0 6.4-6.4L14 13l-3-3Z" />
+      </symbol>
+      <symbol id="icon-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      </symbol>
+      <symbol id="icon-chat" viewBox="0 0 24 24">
+        <path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8 8 0 0 1-3.5-.8L4 20l1.5-4A7.1 7.1 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5Z" />
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="m5 12 4 4L19 6" />
+      </symbol>
+    </svg>
+
+    <div class="demo-notice">
+      <span>DEMO WEBSITE</span> Sample business details and prices — customize before publishing.
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Flow Plumbing Co. home">
+        <span class="brand-mark"><svg><use href="#icon-drop"></use></svg></span>
+        <span>Flow <strong>Plumbing Co.</strong></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="header-cta whatsapp-cta" href="https://api.whatsapp.com/send?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20plumbing%20service." target="_blank" rel="noreferrer">WhatsApp us <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> PLUMBING, MADE SIMPLE</p>
+          <h1 id="hero-heading">Good work.<br><em>No-drama plumbing.</em></h1>
+          <p class="hero-description">From dripping taps to planned upgrades, get straightforward help for the plumbing jobs at home.</p>
+          <div class="hero-actions">
+            <a class="button button-primary whatsapp-cta" href="https://api.whatsapp.com/send?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20plumbing%20service." target="_blank" rel="noreferrer">Chat on WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#services">Explore services</a>
+          </div>
+          <div class="hero-note">
+            <span class="note-check"><svg><use href="#icon-check"></use></svg></span>
+            <span>Clear estimates. Work agreed before it starts.</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="image-frame">
+            <img
+              src="assets/bathroom-project.jpe"
+              alt="Bathroom with a bathtub, basin and toilet"
+            >
+            <div class="image-caption">
+              <span class="caption-icon"><svg><use href="#icon-drop"></use></svg></span>
+              <span><strong>Everyday plumbing</strong><small>Home repairs &amp; upgrades</small></span>
+            </div>
+          </div>
+          <span class="visual-shape visual-shape-one" aria-hidden="true"></span>
+          <span class="visual-shape visual-shape-two" aria-hidden="true"></span>
+        </div>
+      </section>
+
+      <section class="service-area" aria-label="Service area">
+        <span class="area-icon"><svg><use href="#icon-pin"></use></svg></span>
+        <span><small>YOUR LOCAL PLUMBER</small><strong>Serving your area</strong></span>
+        <span class="area-divider"></span>
+        <span class="area-copy">Local coverage varies. Ask us if we reach your neighbourhood.</span>
+        <a href="#contact" class="area-link">Check availability <span aria-hidden="true">→</span></a>
+      </section>
+
+      <section class="services-section section-pad" id="services" aria-labelledby="services-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">HOW WE CAN HELP</p>
+            <h2 id="services-heading">Plumbing help for the everyday stuff</h2>
+          </div>
+          <p>Tell us what’s going on and we’ll help you figure out a sensible next step.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-drop"></use></svg></span>
+            <span class="service-index">01</span>
+            <h3>Leaks &amp; dripping taps</h3>
+            <p>Find the source of a leak and discuss repair options for taps, pipes and fittings.</p>
+            <a href="#contact">Ask about a repair <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-grid"></use></svg></span>
+            <span class="service-index">02</span>
+            <h3>Drains &amp; blockages</h3>
+            <p>Get help with slow or blocked sinks, basins and household drains.</p>
+            <a href="#contact">Ask about a blockage <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-wrench"></use></svg></span>
+            <span class="service-index">03</span>
+            <h3>Toilets &amp; plumbing fixtures</h3>
+            <p>Repairs and replacements for toilets, mixers, taps and other common fixtures.</p>
+            <a href="#contact">Discuss a fixture <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-drop"></use></svg></span>
+            <span class="service-index">04</span>
+            <h3>Geysers &amp; hot water</h3>
+            <p>Enquire about a hot-water issue, maintenance or an installation assessment.</p>
+            <a href="#contact">Ask about hot water <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-icon"><svg><use href="#icon-grid"></use></svg></span>
+            <span class="service-index">05</span>
+            <h3>Bathroom upgrades</h3>
+            <p>Plan plumbing changes for a bathroom refresh or a new fixture layout.</p>
+            <a href="#contact">Talk through a project <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card service-card-cta">
+            <span class="service-icon"><svg><use href="#icon-chat"></use></svg></span>
+            <h3>Not sure what you need?</h3>
+            <p>Describe the problem. We’ll help work out what information is needed for an estimate.</p>
+            <a href="#contact">Tell us about it <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing-section section-pad" id="pricing" aria-labelledby="pricing-heading">
+        <div class="section-heading pricing-heading">
+          <div>
+            <p class="eyebrow">A STARTING POINT</p>
+            <h2 id="pricing-heading">Example price guide</h2>
+          </div>
+          <p>Illustrative demo prices in rand. Not a live offer or an actual quote.</p>
+        </div>
+        <div class="pricing-note">
+          <span class="note-check"><svg><use href="#icon-check"></use></svg></span>
+          <span>Every job is different. Confirm scope, call-out charges, parts, VAT and final pricing before booking.</span>
+        </div>
+        <div class="price-grid">
+          <article class="price-card">
+            <span class="price-label">QUICK FIX</span>
+            <h3>Tap or small fitting repair</h3>
+            <p class="price">From <strong>R450</strong></p>
+            <p class="price-caption">Example labour estimate</p>
+            <a href="#contact">Request an estimate <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="price-card price-card-featured">
+            <span class="price-label">COMMON CALL-OUT</span>
+            <h3>Leak or toilet assessment</h3>
+            <p class="price">From <strong>R650</strong></p>
+            <p class="price-caption">Example visit estimate</p>
+            <a href="#contact">Request an estimate <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="price-card">
+            <span class="price-label">DRAIN CARE</span>
+            <h3>Household drain clearing</h3>
+            <p class="price">From <strong>R850</strong></p>
+            <p class="price-caption">Example labour estimate</p>
+            <a href="#contact">Request an estimate <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+        <p class="pricing-disclaimer">Sample figures are fictional placeholders for this demo website. Replace with your own verified rates. Final costs can vary with access, diagnosis, materials, urgency and the agreed scope of work.</p>
+      </section>
+
+      <section class="process-section section-pad" aria-labelledby="process-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A SIMPLE PROCESS</p>
+            <h2 id="process-heading">From first message to finished job</h2>
+          </div>
+          <p>Know what happens next before you commit to the work.</p>
+        </div>
+        <ol class="process-list">
+          <li><span>01</span><div><h3>Tell us what’s happening</h3><p>Share the issue, your area and any useful photos or details.</p></div></li>
+          <li><span>02</span><div><h3>Arrange an assessment</h3><p>We’ll confirm availability and whether a visit is needed to assess the job.</p></div></li>
+          <li><span>03</span><div><h3>Review the estimate</h3><p>Agree on the scope and price before work begins.</p></div></li>
+          <li><span>04</span><div><h3>Get the work done</h3><p>Once approved, the work can be scheduled and completed as agreed.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-heading">
+        <div class="about-copy">
+          <p class="eyebrow">ABOUT FLOW PLUMBING CO.</p>
+          <h2 id="about-heading">Practical plumbing, explained clearly.</h2>
+          <p>This is a sample business profile for a local plumbing service. Replace this copy with your business story, actual service area, working hours and the qualifications you can verify.</p>
+          <p>For work in South Africa, customers can check the provider’s applicable registration and credentials before appointing them.</p>
+          <a class="reference-link" href="https://www.pirb.co.za/" target="_blank" rel="noreferrer">Plumbing Industry Registration Board <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="about-image">
+          <img src="assets/bathroom-project.jpe" alt="Example bathroom project reference">
+          <span>Example project image</span>
+        </div>
+      </section>
+
+      <section class="faq-section section-pad" id="faq" aria-labelledby="faq-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">GOOD TO KNOW</p>
+            <h2 id="faq-heading">Frequently asked questions</h2>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Are the prices on this page fixed?</summary>
+            <p>No. The prices are fictional examples for this demo. A real business should publish only verified rates and confirm the scope, parts and any call-out charge before work is approved.</p>
+          </details>
+          <details>
+            <summary>Do you cover my area?</summary>
+            <p>This sample site has no real service area. Replace “your area” with the locations your business actually serves and confirm availability when enquiries come in.</p>
+          </details>
+          <details>
+            <summary>What should I include when asking for an estimate?</summary>
+            <p>Describe the issue, share your suburb or area, explain when it started and mention any access constraints. Photos can help with an initial discussion, but may not replace an on-site assessment.</p>
+          </details>
+          <details>
+            <summary>Can I book emergency plumbing?</summary>
+            <p>Emergency availability is not configured on this demo website. Add your real hours and emergency contact details only if your business can provide that service.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+        <div class="contact-heading">
+          <p class="eyebrow">LET’S TALK</p>
+          <h2 id="contact-heading">What needs fixing?</h2>
+          <p>Start a WhatsApp chat to ask about a repair, check service availability or request an estimate.</p>
+          <div class="contact-promise">
+            <span class="note-check"><svg><use href="#icon-check"></use></svg></span>
+            <span>No obligation to proceed with a quote.</span>
+          </div>
+        </div>
+        <div class="whatsapp-panel">
+          <span class="whatsapp-mark" aria-hidden="true">WA</span>
+          <h3>Message us on WhatsApp</h3>
+          <p>A new WhatsApp message will open with a short enquiry ready to send. Add your area and a description of the job.</p>
+          <a class="whatsapp-button whatsapp-cta" href="https://api.whatsapp.com/send?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20plumbing%20service.%20My%20area%20is%3A%20" target="_blank" rel="noreferrer">
+            <span class="whatsapp-button-mark" aria-hidden="true">WA</span>
+            Continue to WhatsApp
+            <span class="whatsapp-arrow" aria-hidden="true">↗</span>
+          </a>
+          <p class="whatsapp-setup" id="whatsapp-setup">No business number is configured. Add a verified WhatsApp number with country code to the data-whatsapp-number attribute on the page’s opening html tag to link directly to your business. Without it, WhatsApp opens with the message ready for the visitor to choose a contact.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home">
+        <span class="brand-mark"><svg><use href="#icon-drop"></use></svg></span>
+        <span>Flow <strong>Plumbing Co.</strong></span>
+      </a>
+      <span>Sample plumbing business · Update before publishing</span>
+      <a class="whatsapp-cta" href="https://api.whatsapp.com/send?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20plumbing%20service." target="_blank" rel="noreferrer">WhatsApp us <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
