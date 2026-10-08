@@ -64,11 +64,15 @@
         <span class="brand-mark"><svg><use href="#icon-drop"></use></svg></span>
         <span>Flow <strong>Plumbing Co.</strong></span>
       </a>
-      <nav class="main-nav" aria-label="Main navigation">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        Menu
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#about">About</a>
         <a href="#faq">FAQ</a>
+        <a href="#work">Our Work</a>
       </nav>
       <a class="header-cta whatsapp-cta" href="https://api.whatsapp.com/send?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20plumbing%20service." target="_blank" rel="noreferrer">WhatsApp us <span aria-hidden="true">↗</span></a>
     </header>
@@ -91,8 +95,8 @@
         <div class="hero-visual">
           <div class="image-frame">
             <img
-              src="assets/bathroom-project.jpe"
-              alt="Bathroom with a bathtub, basin and toilet"
+              src="assets/bathroom-refresh.webp"
+              alt="Sample bathroom inspiration with a bath, vanity and shower"
             >
             <div class="image-caption">
               <span class="caption-icon"><svg><use href="#icon-drop"></use></svg></span>
@@ -165,6 +169,110 @@
         </div>
       </section>
 
+      <section class="estimate-section section-pad" id="estimate" aria-labelledby="estimate-heading">
+        <div class="section-heading pricing-heading">
+          <div>
+            <p class="eyebrow">QUICK ESTIMATE</p>
+            <h2 id="estimate-heading">Get an idea of likely costs</h2>
+          </div>
+          <p>Sample pricing only. Use this as a planning tool before discussing the final scope.</p>
+        </div>
+
+        <div class="estimate-shell">
+          <aside class="estimate-summary" aria-live="polite">
+            <p class="estimate-tag">Selected service</p>
+            <h3 id="service-summary">Leak Repair</h3>
+            <p class="estimate-range" id="estimate-range">R850 – R1,400</p>
+            <div class="estimate-meta-list" id="estimate-details">
+              <span><strong>Leak Repair</strong></span>
+              <span>Routine</span>
+              <span>Kitchen</span>
+              <span>Minor</span>
+              <span>No description provided yet.</span>
+            </div>
+          </aside>
+
+          <div class="estimate-form-wrap">
+            <form id="estimate-form" class="estimate-form" aria-label="Plumbing estimate form">
+              <div class="calc-step is-active" data-step="0">
+                <h3>Choose the service</h3>
+                <div class="option-grid">
+                  <button class="option-button is-selected" type="button" data-group="service" data-value="Leak Repair">Leak Repair</button>
+                  <button class="option-button" type="button" data-group="service" data-value="Blocked Drain">Blocked Drain</button>
+                  <button class="option-button" type="button" data-group="service" data-value="Toilet Repair">Toilet Repair</button>
+                  <button class="option-button" type="button" data-group="service" data-value="Geyser Repair">Geyser Repair</button>
+                  <button class="option-button" type="button" data-group="service" data-value="Tap/Fitting Replacement">Tap/Fitting Replacement</button>
+                  <button class="option-button" type="button" data-group="service" data-value="Pipe Repair">Pipe Repair</button>
+                  <button class="option-button" type="button" data-group="service" data-value="General Plumbing">General Plumbing</button>
+                </div>
+              </div>
+
+              <div class="calc-step" data-step="1">
+                <h3>Tell us a bit more</h3>
+                <div class="choice-group">
+                  <p>Urgency</p>
+                  <div class="option-grid compact-grid">
+                    <button class="option-button is-selected" type="button" data-group="urgency" data-value="Routine">Routine</button>
+                    <button class="option-button" type="button" data-group="urgency" data-value="Same Day">Same Day</button>
+                    <button class="option-button" type="button" data-group="urgency" data-value="Emergency">Emergency</button>
+                  </div>
+                </div>
+                <div class="choice-group">
+                  <p>Location</p>
+                  <div class="option-grid compact-grid">
+                    <button class="option-button is-selected" type="button" data-group="location" data-value="Kitchen">Kitchen</button>
+                    <button class="option-button" type="button" data-group="location" data-value="Bathroom">Bathroom</button>
+                    <button class="option-button" type="button" data-group="location" data-value="Outside">Outside</button>
+                    <button class="option-button" type="button" data-group="location" data-value="Geyser">Geyser</button>
+                    <button class="option-button" type="button" data-group="location" data-value="Other">Other</button>
+                  </div>
+                </div>
+                <div class="choice-group">
+                  <p>Complexity</p>
+                  <div class="option-grid compact-grid">
+                    <button class="option-button is-selected" type="button" data-group="complexity" data-value="Minor">Minor</button>
+                    <button class="option-button" type="button" data-group="complexity" data-value="Moderate">Moderate</button>
+                    <button class="option-button" type="button" data-group="complexity" data-value="Major / Not Sure">Major / Not Sure</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="calc-step" data-step="2">
+                <h3>Describe the issue</h3>
+                <label class="sr-only" for="problem-description">Problem description</label>
+                <textarea id="problem-description" rows="5" placeholder="Tell us about the problem, symptoms, location and any photos you have available."></textarea>
+                <div id="calc-summary" class="calc-summary" aria-live="polite">
+                  <div class="calc-summary-row"><span>Service</span><strong id="summary-service">Leak Repair</strong></div>
+                  <div class="calc-summary-row"><span>Urgency</span><strong id="summary-urgency">Routine</strong></div>
+                  <div class="calc-summary-row"><span>Location</span><strong id="summary-location">Kitchen</strong></div>
+                  <div class="calc-summary-row"><span>Complexity</span><strong id="summary-complexity">Minor</strong></div>
+                </div>
+              </div>
+            </form>
+
+            <div class="calc-controls">
+              <div class="calc-step-indicators" aria-label="Estimate progress">
+                <button class="calc-step-indicator is-active" type="button" aria-label="Step 1 of 3" aria-current="step"></button>
+                <button class="calc-step-indicator" type="button" aria-label="Step 2 of 3"></button>
+                <button class="calc-step-indicator" type="button" aria-label="Step 3 of 3"></button>
+              </div>
+              <div class="calc-actions">
+                <button class="button button-secondary" id="calc-back" type="button" hidden>Back</button>
+                <button class="button button-primary" id="calc-next" type="button">Next</button>
+                <button class="button button-secondary" id="calc-reset" type="button">Reset</button>
+              </div>
+            </div>
+
+            <p class="calc-error" id="calc-error" hidden></p>
+            <a class="whatsapp-button" id="calc-discuss" href="https://api.whatsapp.com/send?text=Hi%20Flow%20Plumbing%20Co.%2C%20I'd%20like%20to%20enquire%20about%20a%20plumbing%20job." target="_blank" rel="noreferrer">
+              <span class="whatsapp-button-mark" aria-hidden="true">WA</span>
+              Discuss on WhatsApp
+              <span class="whatsapp-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="pricing-section section-pad" id="pricing" aria-labelledby="pricing-heading">
         <div class="section-heading pricing-heading">
           <div>
@@ -183,21 +291,21 @@
             <h3>Tap or small fitting repair</h3>
             <p class="price">From <strong>R450</strong></p>
             <p class="price-caption">Example labour estimate</p>
-            <a href="#contact">Request an estimate <span aria-hidden="true">→</span></a>
+            <a href="#estimate" class="estimate-trigger" data-service="Tap/Fitting Replacement">Request an estimate <span aria-hidden="true">→</span></a>
           </article>
           <article class="price-card price-card-featured">
             <span class="price-label">COMMON CALL-OUT</span>
             <h3>Leak or toilet assessment</h3>
             <p class="price">From <strong>R650</strong></p>
             <p class="price-caption">Example visit estimate</p>
-            <a href="#contact">Request an estimate <span aria-hidden="true">→</span></a>
+            <a href="#estimate" class="estimate-trigger" data-service="Leak Repair">Request an estimate <span aria-hidden="true">→</span></a>
           </article>
           <article class="price-card">
             <span class="price-label">DRAIN CARE</span>
             <h3>Household drain clearing</h3>
             <p class="price">From <strong>R850</strong></p>
             <p class="price-caption">Example labour estimate</p>
-            <a href="#contact">Request an estimate <span aria-hidden="true">→</span></a>
+            <a href="#estimate" class="estimate-trigger" data-service="Blocked Drain">Request an estimate <span aria-hidden="true">→</span></a>
           </article>
         </div>
         <p class="pricing-disclaimer">Sample figures are fictional placeholders for this demo website. Replace with your own verified rates. Final costs can vary with access, diagnosis, materials, urgency and the agreed scope of work.</p>
@@ -219,6 +327,81 @@
         </ol>
       </section>
 
+      <section class="work-section section-pad" id="work" aria-labelledby="work-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">OUR WORK</p>
+            <h2 id="work-heading">Sample project inspiration</h2>
+          </div>
+          <p>Visual inspiration only. These sample photos do not represent completed customer projects.</p>
+        </div>
+
+        <div class="gallery-controls" aria-label="Project filter controls">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="repairs" aria-pressed="false">Repairs</button>
+          <button class="filter-button" type="button" data-filter="installations" aria-pressed="false">Installations</button>
+          <button class="filter-button" type="button" data-filter="maintenance" aria-pressed="false">Maintenance</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-category="repairs">
+            <div class="project-visual project-visual--repair">
+              <img class="project-photo" src="assets/bathroom-refresh.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+              <button type="button" data-image="assets/bathroom-refresh.webp" data-title="Bathroom refresh inspiration" data-summary="A sample design direction for shower, bath and vanity updates. This is a stock image, not a completed customer project." aria-label="View bathroom refresh inspiration image">
+                <span>View image</span>
+              </button>
+            </div>
+            <div class="project-copy">
+              <span>Demo inspiration</span>
+              <h3>Bathroom refresh</h3>
+              <p>A clean finish direction for shower, bath and fixture updates.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="installations">
+            <div class="project-visual project-visual--install">
+              <img class="project-photo" src="assets/kitchen-install.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+              <button type="button" data-image="assets/kitchen-install.webp" data-title="Kitchen install inspiration" data-summary="A sample visual for a kitchen sink and tap update. This is a stock image, not a completed customer project." aria-label="View kitchen installation inspiration image">
+                <span>View image</span>
+              </button>
+            </div>
+            <div class="project-copy">
+              <span>Demo inspiration</span>
+              <h3>Kitchen install</h3>
+              <p>Sink and tap ideas for a practical kitchen refresh.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="maintenance">
+            <div class="project-visual project-visual--maintain">
+              <img class="project-photo" src="assets/hot-water-service.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+              <button type="button" data-image="assets/hot-water-service.webp" data-title="Hot water service inspiration" data-summary="A sample reference for a hot-water system assessment. This is a stock image, not a completed customer project." aria-label="View hot water service inspiration image">
+                <span>View image</span>
+              </button>
+            </div>
+            <div class="project-copy">
+              <span>Demo inspiration</span>
+              <h3>Hot water service</h3>
+              <p>A reference point for a hot-water system check or upgrade.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="repairs">
+            <div class="project-visual project-visual--drain">
+              <img class="project-photo" src="assets/drain-clearing.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+              <button type="button" data-image="assets/drain-clearing.webp" data-title="Drain clearing inspiration" data-summary="A sample visual of under-sink pipework during a repair. This is a stock image, not a completed customer project." aria-label="View drain clearing inspiration image">
+                <span>View image</span>
+              </button>
+            </div>
+            <div class="project-copy">
+              <span>Demo inspiration</span>
+              <h3>Drain clearing</h3>
+              <p>An under-sink repair reference for recurring drainage issues.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="about-section" id="about" aria-labelledby="about-heading">
         <div class="about-copy">
           <p class="eyebrow">ABOUT FLOW PLUMBING CO.</p>
@@ -228,8 +411,8 @@
           <a class="reference-link" href="https://www.pirb.co.za/" target="_blank" rel="noreferrer">Plumbing Industry Registration Board <span aria-hidden="true">↗</span></a>
         </div>
         <div class="about-image">
-          <img src="assets/bathroom-project.jpe" alt="Example bathroom project reference">
-          <span>Example project image</span>
+          <img src="assets/bathroom-refresh.webp" alt="Sample bathroom inspiration with a bath, vanity and shower">
+          <span>Demo inspiration image</span>
         </div>
       </section>
 
@@ -283,6 +466,17 @@
         </div>
       </section>
     </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <div class="lightbox-panel">
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close gallery view">×</button>
+        <img id="lightbox-image" src="" alt="">
+        <div class="lightbox-copy">
+          <h3 id="lightbox-title">Project</h3>
+          <p id="lightbox-text">Project summary</p>
+        </div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <a class="brand footer-brand" href="#home">
