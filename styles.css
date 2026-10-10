@@ -1,13 +1,23 @@
 :root {
   color-scheme: light;
-  --ink: #1d2d2c;
-  --muted: #73817c;
-  --green: #226d55;
-  --green-deep: #174c3d;
-  --green-light: #e9f0e9;
-  --cream: #f7f7f2;
-  --line: #e7e8df;
-  --gold: #ecaa43;
+  --ink: #1a272d;
+  --muted: #5c6d70;
+  --primary: #132f3b;
+  --primary-deep: #0d2029;
+  --primary-soft: #edf2f1;
+  --green: #203f4a;
+  --green-deep: #16313e;
+  --green-light: #f3f1eb;
+  --surface: #f7f2eb;
+  --surface-alt: #fbf8f4;
+  --line: #d9d1c7;
+  --gold: #c48747;
+  --accent: #c37431;
+  --accent-soft: #f6e7d9;
+  --steel: #2a4450;
+  --steel-soft: #edf3f4;
+  --success: #335f65;
+  --shadow-soft: rgb(15 27 33 / 14%);
   font-family: "DM Sans", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,7 +34,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--cream);
+  background: var(--surface);
   color: var(--ink);
 }
 
@@ -47,8 +57,8 @@ textarea {
 
 .demo-notice {
   padding: 8px 18px;
-  background: #173d32;
-  color: #d9e8dd;
+  background: var(--primary-deep);
+  color: #edf5f8;
   text-align: center;
   font-size: 10px;
   letter-spacing: 0.2px;
@@ -56,13 +66,14 @@ textarea {
 
 .demo-notice span {
   margin-right: 7px;
-  color: #f0c273;
+  color: var(--accent);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 .site-header {
+  position: relative;
   max-width: 1200px;
   min-height: 76px;
   display: flex;
@@ -70,6 +81,23 @@ textarea {
   gap: 38px;
   margin: auto;
   padding: 0 45px;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255 255 255 / 70%);
+  color: var(--ink);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .brand {
@@ -94,7 +122,7 @@ textarea {
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: var(--green);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
 }
 
@@ -120,7 +148,7 @@ textarea {
 }
 
 .main-nav a {
-  color: #687671;
+  color: #5f6f75;
   font-size: 11px;
   font-weight: 600;
   text-decoration: none;
@@ -137,17 +165,19 @@ textarea {
   align-items: center;
   gap: 12px;
   padding: 0 14px;
-  border-radius: 6px;
-  background: var(--green);
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), #a85d25);
   color: white;
   font-size: 10px;
   font-weight: 700;
   text-decoration: none;
-  transition: background 160ms ease;
+  box-shadow: 0 10px 18px rgb(194 117 47 / 18%);
+  transition: background 160ms ease, transform 160ms ease;
 }
 
 .header-cta:hover {
-  background: var(--green-deep);
+  background: linear-gradient(135deg, #a85d25, var(--primary));
+  transform: translateY(-1px);
 }
 
 .header-cta span {
@@ -180,7 +210,7 @@ main {
   align-items: center;
   gap: 9px;
   margin: 0 0 16px;
-  color: var(--green);
+  color: var(--steel);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -190,7 +220,7 @@ main {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #b38242;
+  background: var(--accent);
 }
 
 .hero h1 {
@@ -204,7 +234,7 @@ main {
 }
 
 .hero h1 em {
-  color: var(--green);
+  color: var(--accent);
   font-style: normal;
 }
 
@@ -243,22 +273,23 @@ main {
 }
 
 .button-primary {
-  background: var(--green);
+  background: linear-gradient(135deg, var(--primary), var(--green));
   color: white;
+  box-shadow: 0 12px 22px rgb(20 46 58 / 18%);
 }
 
 .button-primary:hover {
-  background: var(--green-deep);
+  background: linear-gradient(135deg, var(--green-deep), var(--primary));
 }
 
 .button-secondary {
-  border-color: #dce2db;
-  background: transparent;
+  border-color: #d9d3c8;
+  background: rgba(255, 255, 255, 0.32);
   color: var(--ink);
 }
 
 .button-secondary:hover {
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .hero-actions .button-primary span {
@@ -271,7 +302,7 @@ main {
   align-items: center;
   gap: 9px;
   margin-top: 22px;
-  color: #78847f;
+  color: #6f7d77;
   font-size: 10px;
 }
 
@@ -282,8 +313,8 @@ main {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #deebdf;
-  color: var(--green);
+  background: linear-gradient(135deg, var(--accent-soft), #f1ebe3);
+  color: var(--primary);
 }
 
 .note-check svg {
@@ -305,10 +336,10 @@ main {
   width: min(100%, 430px);
   height: 330px;
   overflow: hidden;
-  border: 7px solid white;
+  border: 7px solid rgba(255, 255, 255, 0.92);
   border-radius: 48% 48% 10px 10px;
-  background: #d5ded9;
-  box-shadow: 0 18px 45px rgb(38 58 48 / 13%);
+  background: linear-gradient(135deg, #dfe1dc, #d3d7d2);
+  box-shadow: 0 18px 45px rgb(15 38 46 / 14%);
 }
 
 .image-frame > img,
@@ -375,7 +406,7 @@ main {
   right: 4px;
   width: 280px;
   height: 280px;
-  background: #e9eee4;
+  background: linear-gradient(135deg, #f1e7dc, #e4eee7);
 }
 
 .visual-shape-two {
@@ -383,7 +414,8 @@ main {
   left: 8px;
   width: 86px;
   height: 86px;
-  border: 1px solid #d5dfd2;
+  border: 1px solid #d9d0c4;
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .service-area {
@@ -499,15 +531,16 @@ main {
   position: relative;
   min-height: 207px;
   padding: 20px 19px 18px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
-  transition: border-color 160ms ease, transform 160ms ease;
+  border: 1px solid #d9d0c7;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fffdfb, #f7f3ee);
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
 
 .service-card:hover {
   transform: translateY(-2px);
-  border-color: #cbdacf;
+  border-color: #d1b18e;
+  box-shadow: 0 10px 20px rgb(19 47 59 / 7%);
 }
 
 .service-icon {
@@ -516,8 +549,8 @@ main {
   display: grid;
   place-items: center;
   border-radius: 10px;
-  background: var(--green-light);
-  color: var(--green);
+  background: linear-gradient(135deg, var(--accent-soft), #f3efe9);
+  color: var(--primary);
 }
 
 .service-icon svg {
@@ -567,7 +600,7 @@ main {
 }
 
 .service-card-cta {
-  background: #eef2e9;
+  background: linear-gradient(180deg, #f8f4ef, #eff4f0);
 }
 
 .service-card-cta .service-icon {
@@ -578,7 +611,7 @@ main {
   margin: 0 -45px;
   padding-right: 51px;
   padding-left: 51px;
-  background: #edf1e9;
+  background: linear-gradient(180deg, #f1ebdf, #edf3f0);
 }
 
 .pricing-heading {
@@ -607,18 +640,19 @@ main {
 
 .price-card {
   padding: 20px;
-  border: 1px solid #e1e6dc;
-  border-radius: 8px;
-  background: white;
+  border: 1px solid #d9d2c8;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .price-card-featured {
-  border-color: var(--green);
-  box-shadow: 0 8px 24px rgb(35 75 54 / 8%);
+  border-color: var(--accent);
+  box-shadow: 0 10px 24px rgb(194 117 47 / 10%);
+  background: linear-gradient(180deg, #fffdfb, #f5efe9);
 }
 
 .price-label {
-  color: var(--green);
+  color: var(--accent);
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -773,8 +807,8 @@ main {
 }
 
 .filter-button.is-active {
-  border-color: var(--green);
-  background: var(--green-light);
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-soft), #edf1ee);
   color: var(--green-deep);
 }
 
@@ -841,7 +875,7 @@ main {
   bottom: 12px;
   padding: 7px 10px;
   border-radius: 999px;
-  background: rgb(23 76 61 / 88%);
+  background: rgb(29 51 64 / 86%);
   backdrop-filter: blur(4px);
   font-size: 10px;
   font-weight: 700;
@@ -935,7 +969,7 @@ main {
   margin: 0 0 38px;
   padding: 35px 40px;
   border-radius: 9px;
-  background: #e9eee4;
+  background: linear-gradient(135deg, #edf1ee, #e9eee4);
   scroll-margin-top: 20px;
 }
 
@@ -972,8 +1006,8 @@ main {
   display: inline-grid;
   place-items: center;
   border-radius: 50%;
-  background: #e3f5e9;
-  color: #15803d;
+  background: #eaf3ec;
+  color: #1b5a55;
   font-size: 9px;
   font-weight: 800;
 }
@@ -1005,7 +1039,7 @@ main {
   margin-top: 17px;
   padding: 0 14px;
   border-radius: 6px;
-  background: #168447;
+  background: linear-gradient(135deg, var(--green), var(--primary));
   color: white;
   font-size: 11px;
   font-weight: 700;
@@ -1015,7 +1049,7 @@ main {
 
 .whatsapp-button:hover {
   transform: translateY(-1px);
-  background: #126f3b;
+  background: linear-gradient(135deg, var(--primary), var(--green-deep));
 }
 
 .whatsapp-button-mark {
@@ -1053,7 +1087,7 @@ main {
   padding: 22px 18px;
   border: 1px solid #dfe7df;
   border-radius: 12px;
-  background: #f5faf5;
+  background: linear-gradient(180deg, #f5f8f2, #edf3ef);
 }
 
 .estimate-tag {
@@ -1360,11 +1394,48 @@ body.lightbox-open {
     padding: 0 23px;
   }
 
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
   .main-nav {
-    gap: 15px;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 23px;
+    left: 23px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 10px;
+    border: 1px solid rgb(19 47 59 / 8%);
+    border-radius: 12px;
+    background: rgb(251 248 244 / 98%);
+    box-shadow: 0 18px 36px rgb(15 27 33 / 12%);
+    z-index: 10;
+  }
+
+  .main-nav.is-open {
+    display: flex;
   }
 
   .main-nav a {
+    padding: 11px 8px;
+    border-bottom: 1px solid rgb(19 47 59 / 6%);
+    color: var(--ink);
+    font-size: 12px;
+  }
+
+  .main-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .header-cta {
+    min-height: 39px;
+    gap: 8px;
+    margin-left: 0;
+    padding: 0 12px;
     font-size: 10px;
   }
 
@@ -1483,6 +1554,18 @@ body.lightbox-open {
   }
 }
 
+@media (max-width: 680px) {
+  .hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+  }
+}
+
 @media (max-width: 540px) {
   html {
     scroll-padding-top: 18px;
@@ -1514,13 +1597,12 @@ body.lightbox-open {
   }
 
   .main-nav {
-    display: none;
+    right: 17px;
+    left: 17px;
   }
 
   .header-cta {
     min-height: 35px;
-    gap: 7px;
-    margin-left: auto;
     padding: 0 10px;
     font-size: 9px;
   }
@@ -1543,18 +1625,19 @@ body.lightbox-open {
   .hero-description {
     max-width: 340px;
     margin: 13px 0 18px;
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   .button {
-    min-height: 41px;
-    padding: 0 13px;
-    font-size: 9px;
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 11px;
   }
 
   .hero-note {
     margin-top: 16px;
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .hero-visual {
@@ -1586,12 +1669,12 @@ body.lightbox-open {
     flex: 0 0 calc(100% - 49px);
     margin-left: 46px;
     margin-top: -4px;
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .area-link {
     margin: 2px 0 0 46px;
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .section-pad {
@@ -1611,7 +1694,7 @@ body.lightbox-open {
   }
 
   .section-heading > p {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .service-grid,
@@ -1683,7 +1766,7 @@ body.lightbox-open {
   }
 
   .faq-list summary {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .contact-section {
@@ -1700,7 +1783,7 @@ body.lightbox-open {
     justify-content: space-between;
     gap: 9px;
     padding: 13px 18px;
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .footer-brand {
